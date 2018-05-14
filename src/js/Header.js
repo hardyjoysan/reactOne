@@ -10,8 +10,7 @@ import {
 	BrowserRouter as Router,
 	Route,
 	Link,
-	Switch,
-	Redirect
+	Switch
   } from 'react-router-dom'
 
 class Header extends Component{
@@ -19,16 +18,16 @@ class Header extends Component{
 		return(
 			<Router>
 				<div className="App">
-				<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-					<h5 class="my-0 mr-md-auto font-weight-normal">ReactOne</h5>
-					<nav class="my-2 my-md-0 mr-md-3">
+				<div className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+					<h5 className="my-0 mr-md-auto font-weight-normal">{this.props.sitename}</h5>
+					<nav className="my-2 my-md-0 mr-md-3">
 					<Link className="p-2 text-dark" to="/">Home</Link>
 					<Link className="p-2 text-dark" to="/features">Features</Link>
 					<Link className="p-2 text-dark" to="/enterprise">Enterprise</Link>
 					<Link className="p-2 text-dark" to="/support">Support</Link>
 					<Link className="p-2 text-dark" to="/pricing">Pricing</Link>
 					</nav>
-					<a class="btn btn-outline-primary" href="#">Sign up</a>
+					<a className="btn btn-outline-primary" href="#">Sign up</a>
 				</div>
 
 				<Switch>
