@@ -25,6 +25,11 @@ class Home extends Component {
                             .map(key => <Movie key={key} meta={this.state.movies[key]} />)
                         }
                     </div>
+                    <div className="row">
+                        <div className="text-center">
+                            <button onClick={this.loadAdditionalMovies} className="btn btn-outline-danger">Load more...</button>
+                        </div>
+                    </div>
                 </div>
                 
             </div>
