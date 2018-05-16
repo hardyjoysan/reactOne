@@ -5,13 +5,13 @@ class Movie extends Component{
         return(
             <div className="col-md">
                 <div className="card">
-                    <img className="card-img-top" src={ this.props.poster } alt={ this.props.title } width="200px" />
+                    <img className="card-img-top" src={ this.props.meta.poster } alt={ this.props.meta.title } width="200px" />
                     <div className="card-body">
-                        <h5 className="card-title">{ this.props.title }</h5>
-                        <p className="card-text">{ this.props.description }</p>
+                        <h5 className="card-title">{ this.props.meta.title }</h5>
+                        <p className="card-text">{ this.props.meta.description }</p>
                     </div>
                     <ul className="list-group list-group-flush">
-                        <li className="list-group-item">({ this.props.year })</li>
+                        <li className="list-group-item">({ this.props.meta.year })</li>
                     </ul>
                 </div>
             </div>
