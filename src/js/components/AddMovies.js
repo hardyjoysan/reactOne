@@ -4,19 +4,19 @@ class AddMovies extends Component{
 	render(){
 		return(
             <div className="container">
-                <form className="movie-form">
+                <form className="movie-form" onSubmit={(e)=>this.addNewMovie(e)}>
                     <h2>Add Movie</h2>
                     <div className="form-group">
-                        <input ref={ ( input ) => this.title = input } type="text" placeholder="Title" className="form-control"/>
+                        <input ref={ ( input ) => this.title = input } type="text" placeholder="Title" className="form-control" required/>
                     </div>
                     <div className="form-group">
-                        <input ref={ ( input ) => this.year = input } type="text" placeholder="Year" className="form-control"/>
+                        <input ref={ ( input ) => this.year = input } type="text" placeholder="Year" className="form-control" required/>
                     </div>
                     <div className="form-group">
-                        <input ref={ ( input ) => this.poster = input } type="text" placeholder="Poster" className="form-control"/>
+                        <input ref={ ( input ) => this.poster = input } type="text" placeholder="Poster" className="form-control" required/>
                     </div>
                     <div className="form-group">
-                        <textarea ref={ ( input ) => this.description = input } type="text" placeholder="Description" className="form-control"></textarea>
+                        <textarea ref={ ( input ) => this.description = input } type="text" placeholder="Description" className="form-control" required></textarea>
                     </div>
                     <div className="form-group">
                         <button type="submit" className="btn btn-success">Add Movie</button>

@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 
 import HomeBanner from './HomeBanner';
 import Movie from './Movie';
+import AddMovies from './AddMovies';
 
 import '../../css/home.css';
 import {initialMovies, additionalMovies} from './Movies';
@@ -14,6 +15,27 @@ class Home extends Component {
             movies: initialMovies
         };
         this.loadAdditionalMovies = this.loadAdditionalMovies.bind(this);
+        this.addMovieToGallery = this.addMovieToGallery.bind(this); 
+    }
+
+    addNewMovie(e) {
+        e.preventDefault();
+        var movie =  {
+            title: this.title.value,
+            year: this.year.value,
+            description: this.description.value,
+            poster: this.poster.value
+        };
+        this.props.addMovie( movie );
+    }
+
+    addMovieToGallery(movie){
+        const ts = Date.now(); 
+        const newMovie = {};
+        newMovie[ 'movie' + ts] = movie; 
+        const currentMovies = { ...this.state.movies};
+        const newMovies = Object.assign( currentMovies, newMovie ); 
+        this.setState({ movies: newMovies});
     }
 
     loadAdditionalMovies() {
@@ -39,6 +61,9 @@ class Home extends Component {
                     </div>
                     <div className="row text-center">
                         <button onClick={this.loadAdditionalMovies} className="btn btn-outline-danger btn-load">Load more...</button>
+                    </div>
+                    <div className="row">
+                        <AddMovies addMovie={this.addMovieToGallery} />
                     </div>
                 </div>
             </div>
