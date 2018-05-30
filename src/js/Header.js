@@ -10,7 +10,7 @@ class Header extends Component{
 					<h5 className="my-0 mr-md-auto font-weight-normal">{this.props.sitename}</h5>
 					<nav className="my-2 my-md-0 mr-md-3">
 					<Link className="p-2 text-dark" to="/">Home</Link>
-					<Link className="p-2 text-dark" to="/features">Features</Link>
+					<Link className="p-2 text-dark" to="/blog">Blog</Link>
 					<Link className="p-2 text-dark" to="/enterprise">Enterprise</Link>
 					<Link className="p-2 text-dark" to="/support">Support</Link>
 					<Link className="p-2 text-dark" to="/pricing">Pricing</Link>
