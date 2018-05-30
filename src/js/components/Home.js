@@ -11,22 +11,12 @@ import {Link} from 'react-router-dom'
 class Home extends Component {
     constructor() {
         super();
+        this.loadAdditionalMovies = this.loadAdditionalMovies.bind(this);
+        this.addMovieToGallery = this.addMovieToGallery.bind(this);
+
         this.state = {
             movies: initialMovies
         };
-        this.loadAdditionalMovies = this.loadAdditionalMovies.bind(this);
-        this.addMovieToGallery = this.addMovieToGallery.bind(this); 
-    }
-
-    addNewMovie(e) {
-        e.preventDefault();
-        var movie =  {
-            title: this.title.value,
-            year: this.year.value,
-            description: this.description.value,
-            poster: this.poster.value
-        };
-        this.props.addMovie( movie );
     }
 
     addMovieToGallery(movie){
